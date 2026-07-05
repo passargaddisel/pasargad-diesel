@@ -2,31 +2,77 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>گالری تصاویر | پاسارگاد دیزل</title>
-    <meta name="description" content="گالری تصاویر پاسارگاد دیزل شامل دستگاه‌های تست پمپ، کامان‌ریل و محیط کارگاه.">
+    <title>گالری تصاویر تعمیر پمپ دیزل | پاسارگاد دیزل</title>
+    <meta name="description" content="تصاویر واقعی از تعمیر پمپ دیزل، انژکتور، تست کامان‌ریل و تجهیزات پاسارگاد دیزل. کیفیت کار ما را ببینید.">
+    <meta name="keywords" content="گالری تعمیر پمپ دیزل, تصاویر تعمیر انژکتور, پاسارگاد دیزل, تست کامان‌ریل">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- فایل CSS اصلی -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- سبک مخصوص گالری -->
     <style>
-        body { font-family: sans-serif; direction: rtl; background: #f4f4f4; margin: 0; }
-        header { background: #1a1a1a; padding: 15px; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .section {
-            background: white; margin: 20px auto; padding: 25px;
-            border-radius: 12px; max-width: 1000px; box-shadow: 0 0 10px #ccc;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
         }
-        .gallery img {
-            width: 100%; border-radius: 10px; margin-bottom: 20px;
-            box-shadow: 0 0 10px #bbb;
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 10px #ccc;
         }
-        footer {
-            background: #1a1a1a; color: white; text-align: center;
-            padding: 20px; margin-top: 30px;
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0,0,0,0.9);
+        }
+
+        .lightbox img {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: block;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #fff;
+            font-size: 30px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
 <header>
+    <h1>گالری پاسارگاد دیزل</h1>
     <nav>
-        <a href="index.html">خانه</a>
+        <a href="index.html">صفحه اصلی</a>
         <a href="services.html">خدمات</a>
         <a href="about.html">درباره ما</a>
         <a href="gallery.html">گالری</a>
@@ -34,19 +80,41 @@
     </nav>
 </header>
 
-<div class="section">
-    <h2>گالری تصاویر پاسارگاد دیزل</h2>
-    <p>نمونه‌ای از دستگاه‌های تست پمپ، کامان‌ریل و محیط کارگاه:</p>
+<main>
+    <section>
+        <h2>تصاویر تعمیر پمپ و انژکتور دیزل</h2>
+        <p>در این بخش می‌توانید تصاویر واقعی از تعمیر پمپ دیزل، انژکتور و تست کامان‌ریل را مشاهده کنید.</p>
 
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1581091870622-1e7a8d2f6c3b" alt="دستگاه تست پمپ دیزل">
-        <img src="https://images.unsplash.com/photo-1581092795360-1f3f3f3f3f3f" alt="دستگاه تست سوزن کامان‌ریل">
-        <img src="https://images.unsplash.com/photo-1581091012184-5c1d1c1d1c1d" alt="محیط کارگاه تعمیر پمپ">
-    </div>
-</div>
+        <div class="gallery-grid">
+
+            <!-- عکس‌ها را بعداً با عکس‌های واقعی جایگزین کن -->
+            <a href="#img1"><img src="https://images.unsplash.com/photo-1581091870622-1e7a8d2f6c3b" alt="تعمیر پمپ دیزل"></a>
+            <a href="#img2"><img src="https://images.unsplash.com/photo-1581092795360-1f3f3f3f3f3f" alt="تست انژکتور"></a>
+            <a href="#img3"><img src="https://images.unsplash.com/photo-1581091012184-5c1d1c1d1c1d" alt="کارگاه تعمیرات"></a>
+
+        </div>
+
+        <!-- Lightbox -->
+        <div id="img1" class="lightbox">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="https://images.unsplash.com/photo-1581091870622-1e7a8d2f6c3b">
+        </div>
+
+        <div id="img2" class="lightbox">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="https://images.unsplash.com/photo-1581092795360-1f3f3f3f3f3f">
+        </div>
+
+        <div id="img3" class="lightbox">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="https://images.unsplash.com/photo-1581091012184-5c1d1c1d1c1d">
+        </div>
+
+    </section>
+</main>
 
 <footer>
-    © 2026 پاسارگاد دیزل — تمامی حقوق محفوظ است
+    <p>پاسارگاد دیزل - گالری تصاویر تعمیر پمپ و انژکتور دیزل</p>
 </footer>
 
 </body>
