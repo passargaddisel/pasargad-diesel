@@ -1,0 +1,112 @@
+/* فونت فارسی */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    color: #333;
+    direction: rtl;
+}
+
+/* هدر */
+header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+header p {
+    margin: 5px 0 15px;
+    font-size: 16px;
+}
+
+/* منو */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* بخش اصلی */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ddd;
+}
+
+section h2 {
+    margin-top: 0;
+    color: #444;
+}
+
+/* لیست‌ها */
+ul {
+    padding-right: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* گالری */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* فوتر */
+footer {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* واکنش‌گرا */
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+}
